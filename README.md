@@ -1,7 +1,7 @@
 # TDDateRangePicker
 
 `TDDateRangePicker` is a picker with which you can get both a date range and one date and it's all with beautiful designs, animations and much more.
-We have taken into account all the conditions of the its usage.
+We have taken into account all the conditions of its usage.
 The library includes custom `TDDateRangePicker` and a `TDPickerTheme` which allow you to customize the appearance of the picker.
 
 This library is easy to implement. All you need is to connect `TBDateRangePicker` to your class, and initialize a new class object. To get the result, your class must be adopt to the `TDDateRangePickerDelegate` protocol.
