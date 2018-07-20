@@ -1,3 +1,12 @@
+
+<p align="center">
+<img src="Assets/logo.png" alt="TDDateRangePicker" style="max-width:250px;">
+</p>
+
+<p align="center">
+<img src="Assets/demo.gif" alt="TDDateRangePicker Preview" style="max-width:250px;">
+</p>
+
 # TDDateRangePicker
 
 `TDDateRangePicker` is a picker with which you can get both a date range and one date and it's all with beautiful designs, animations and much more.
