@@ -53,7 +53,7 @@
         [_themesArray addObject:[Container createWithName:@"Light theme" theme:[TDPickerTheme lightTheme]]];
         [_themesArray addObject:[Container createWithName:@"Dark theme" theme:[TDPickerTheme darkTheme]]];
         
-        [_themesArray addObject:[Container createWithName:@"Red theme" theme: [[TDPickerTheme alloc] initWithTintColor:UIColor.blueColor backgroundColor:UIColor.redColor datePickerTextColor:UIColor.blackColor backgroundDimmingColor:[UIColor.redColor colorWithAlphaComponent:0.6] titleColor:UIColor.blackColor subtitlesColor:UIColor.darkTextColor blurEffectStyle:UIBlurEffectStyleLight cornersRadius:16.]]];
+        [_themesArray addObject:[Container createWithName:@"Red theme" theme: [[TDPickerTheme alloc] initWithTintColor:UIColor.darkTextColor backgroundColor:UIColor.redColor datePickerTextColor:UIColor.blackColor backgroundDimmingColor:[UIColor.redColor colorWithAlphaComponent:0.6] titleColor:UIColor.blackColor subtitlesColor:UIColor.darkTextColor blurEffectStyle:UIBlurEffectStyleLight cornersRadius:16.]]];
         
         [_themesArray addObject:[Container createWithName:@"Blue theme" theme: [[TDPickerTheme alloc] initWithTintColor:UIColor.whiteColor backgroundColor:UIColor.blueColor datePickerTextColor:UIColor.whiteColor backgroundDimmingColor:[UIColor.blueColor colorWithAlphaComponent:0.6] titleColor:UIColor.whiteColor subtitlesColor:UIColor.whiteColor blurEffectStyle:UIBlurEffectStyleLight cornersRadius:16.]]];
         
