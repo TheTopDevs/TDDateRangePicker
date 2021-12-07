@@ -64,6 +64,10 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *visualEffectViewBottomOffset;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *visualEffectViewTopOffset;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
+
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIView *toDateView;
 @property (weak, nonatomic) IBOutlet UIView *fromDateView;
@@ -86,7 +90,7 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
 
 @property (nonatomic, assign) CGFloat viewWidth;
 
-@property(nonatomic, assign) UIDeviceOrientation orientation;
+@property (nonatomic, assign) UIDeviceOrientation orientation;
 @property (nonatomic, assign) PickerAxis axis;
 
 @property (nonatomic, assign) UIEdgeInsets deviceSafeAreaInsets;
@@ -97,11 +101,28 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
 
 #pragma mark - Initialization methods
 
-- (void)dealloc
-{
-    self.theme = nil;
-    self.minimumDate = nil;
-    self.maximumDate = nil;
+- (void)setPickerTitle:(NSString *)pickerTitle {
+    _pickerTitle = pickerTitle;
+    self.titleLabel.text = pickerTitle;
+}
+
+- (void)setFromDateTitle:(NSString *)fromDateTitle {
+    _fromDateTitle = fromDateTitle;
+    self.fromDateLabel.text = fromDateTitle;
+}
+
+- (void)setToDateTitle:(NSString *)toDateTitle {
+    _toDateTitle = toDateTitle;
+    self.toDateLabel.text = toDateTitle;
+}
+
+- (void)dealloc {
+    _theme = nil;
+    _pickerTitle = nil;
+    _fromDateTitle = nil;
+    _toDateTitle = nil;
+    _minimumDate = nil;
+    _maximumDate = nil;
     
     self.selectedStartDate = nil;
     self.selectedEndDate = nil;
@@ -116,6 +137,9 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
         self->_type = PickerTypeDateRange;
         self->_hidden = YES;
         self.autoChangeMaximumStartDate = YES;
+        _pickerTitle = self.titleLabel.text;
+        _fromDateTitle = self.fromDateLabel.text;
+        _toDateTitle = self.toDateLabel.text;
         self.selectedDate = [NSDate date];
         self.selectedStartDate = [NSDate date];
         self.selectedEndDate = [NSDate date];
@@ -217,10 +241,14 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
     [self.visualEffectView setEffect:[UIBlurEffect effectWithStyle:theme.blurEffectStyle]];
     self.modalPresentationStyle = theme.modalPresentationStyle;
     [self setMaskTo:self.visualEffectView byRoundingSides:theme.sides];
-    [self.endDatePicker setValue:@NO forKey:@"highlightsToday"];
-    [self.startDatePicker setValue:@NO forKey:@"highlightsToday"];
     [self.endDatePicker setValue:theme.datePickerTextColor forKey:@"textColor"];
     [self.startDatePicker setValue:theme.datePickerTextColor forKey:@"textColor"];
+    if (@available(iOS 13.4, *)) {
+        self.endDatePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    }
+    if (@available(iOS 13.4, *)) {
+        self.startDatePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    }
     
     self.toDateView.layer.cornerRadius = self.theme.cornersRadius;
     self.fromDateView.layer.cornerRadius = self.theme.cornersRadius;
@@ -416,7 +444,6 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         CGFloat offset = screenSize.height - (hide ? 0.f : ([weakSelf rangePickerHeight] + weakSelf.deviceSafeAreaInsets.bottom));
-        NSLog(@"animate to offset %f", offset);
         [UIView animateWithDuration:(animated ? weakSelf.theme.animationDuration/2 : 0.f) animations:^{
             weakSelf.view.backgroundColor = hide ? UIColor.clearColor : weakSelf.theme.backgroundDimmingColor;
         }];

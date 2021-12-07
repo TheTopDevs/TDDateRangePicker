@@ -23,23 +23,23 @@ typedef NS_ENUM(NSUInteger, PickerType) {
 
 @optional
 
-- (void)dateRangePickerWillShow:(TDDateRangePicker *)dateRangePicker;
+- (void)dateRangePickerWillShow:(TDDateRangePicker *_Nonnull)dateRangePicker;
 
-- (void)dateRangePickerDidShow:(TDDateRangePicker *)dateRangePicker;
+- (void)dateRangePickerDidShow:(TDDateRangePicker *_Nonnull)dateRangePicker;
 
-- (void)dateRangePickerWillHide:(TDDateRangePicker *)dateRangePicker;
+- (void)dateRangePickerWillHide:(TDDateRangePicker *_Nonnull)dateRangePicker;
 
-- (void)dateRangePickerDidHide:(TDDateRangePicker *)dateRangePicker;
+- (void)dateRangePickerDidHide:(TDDateRangePicker *_Nonnull)dateRangePicker;
 
 /**
  Delegate method returns dateRange with two selected dates from date range picker.
  */
-- (void)dateRangePicker:(TDDateRangePicker *)dateRangePicker didSelectDateRange:(TDDateRange *)dateRange;
+- (void)dateRangePicker:(TDDateRangePicker *_Nonnull)dateRangePicker didSelectDateRange:(TDDateRange *_Nonnull)dateRange;
 
 /**
  Delegate method returns selected date from single date picker.
  */
-- (void)dateRangePicker:(TDDateRangePicker *)dateRangePicker didSelectDate:(NSDate *)date;
+- (void)dateRangePicker:(TDDateRangePicker *_Nonnull)dateRangePicker didSelectDate:(NSDate *_Nonnull)date;
 
 @end
 
@@ -52,16 +52,16 @@ The delegate must adopt the TDDateRangePickerDelegate protocol. The TDDateRangeP
 @property (nonatomic, weak, nullable) id <TDDateRangePickerDelegate> delegate;
 
 ///Object themes for customizing the type of date range picker.
-@property (nonatomic, strong) TDPickerTheme *theme;
+@property (nonatomic, strong) TDPickerTheme * _Nonnull theme;
 
 /// The title that will be displayed on the picker.
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) NSString * _Nonnull pickerTitle;
 
 /// The title that will be displayed in the from date section.
-@property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
+@property (nonatomic, strong) NSString * _Nonnull fromDateTitle;
 
 /// The title that will be displayed in the to date section.
-@property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
+@property (nonatomic, strong) NSString * _Nonnull toDateTitle;
 
 /// The PickerType is a type of displayed date range picker. This type contains two types of pickers with one date or with a date range.
 @property (nonatomic, assign) PickerType type;
@@ -73,10 +73,10 @@ The delegate must adopt the TDDateRangePickerDelegate protocol. The TDDateRangeP
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 
 ///The minimum date that a date range picker can show.
-@property (nonatomic, strong) NSDate *minimumDate;
+@property (nonatomic, retain) NSDate * _Nonnull minimumDate;
 
 ///The maximum date that a date range picker can show. 
-@property (nonatomic, strong) NSDate *maximumDate;
+@property (nonatomic, retain) NSDate * _Nonnull maximumDate;
 
 ///A Boolean value that determines whether the view is hidden.
 @property (nonatomic, assign, getter=isHidden, ) BOOL hidden;
@@ -84,15 +84,15 @@ The delegate must adopt the TDDateRangePickerDelegate protocol. The TDDateRangeP
 /**
  A method that creates the picker with a selected theme.
  */
-- (instancetype)initWithTheme:(TDPickerTheme *)theme;
+- (instancetype _Nonnull )initWithTheme:(TDPickerTheme * _Nonnull)theme;
 
 /// Present picker from view controller.
-- (void)showPickerFromViewController:(UIViewController *)viewController
+- (void)showPickerFromViewController:(UIViewController * _Nonnull)viewController
                             animated:(BOOL)animated
-                          completion:(void(^)(void))completion;
+                          completion:(void(^_Nullable)(void))completion;
 
 /// Present picker from anywhere.
 - (void)showPickerAnimated:(BOOL)animated
-                completion:(void(^)(void))completion;
+                completion:(void(^_Nullable)(void))completion;
 
 @end

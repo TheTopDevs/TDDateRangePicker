@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,21 +35,21 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
-                    <rect key="frame" x="49" y="20" width="600" height="585.5"/>
+                    <rect key="frame" x="49" y="20" width="600" height="586"/>
                     <subviews>
                         <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-qQ-cps">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="585.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="586"/>
                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sZb-kh-Oqq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="585.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="586"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                             <blurEffect style="prominent"/>
                         </visualEffectView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lhV-0h-vaC">
-                            <rect key="frame" x="8" y="8" width="584" height="569.5"/>
+                            <rect key="frame" x="8" y="8" width="584" height="570"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your date diapason" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPU-XJ-AN7">
-                                    <rect key="frame" x="0.0" y="0.0" width="584" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your date range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPU-XJ-AN7">
+                                    <rect key="frame" x="0.0" y="0.0" width="584" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="f21-Ik-qhe"/>
                                     </constraints>
@@ -60,9 +58,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rCJ-lM-pWO">
-                                    <rect key="frame" x="0.0" y="28.5" width="584" height="35"/>
+                                    <rect key="frame" x="0.0" y="29" width="584" height="35"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-IW-QPe">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-IW-QPe">
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="xWf-mL-2Cg"/>
@@ -73,7 +71,7 @@
                                                 <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="xgs-7T-eM6"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP9-3S-EWV">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP9-3S-EWV">
                                             <rect key="frame" x="296" y="0.0" width="288" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="O0n-fG-Skb"/>
@@ -85,10 +83,10 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.41077059510000002" green="0.88710302110000006" blue="0.2664708495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nNV-WR-tbD">
-                                    <rect key="frame" x="0.0" y="71.5" width="584" height="498"/>
+                                    <rect key="frame" x="0.0" y="72" width="584" height="498"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-C1-ghB">
                                             <rect key="frame" x="0.0" y="0.0" width="584" height="245"/>
@@ -111,9 +109,6 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="216" id="rTZ-fG-gF4"/>
                                                             </constraints>
-                                                            <date key="date" timeIntervalSinceReferenceDate="547481898.78006303">
-                                                                <!--2018-05-08 14:18:18 +0000-->
-                                                            </date>
                                                         </datePicker>
                                                     </subviews>
                                                 </stackView>
@@ -133,7 +128,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="584" height="237"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-2b-Fj5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="lz1-9u-S4e"/>
                                                             </constraints>
@@ -142,11 +137,8 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-0L-3E8">
-                                                            <rect key="frame" x="0.0" y="20.5" width="584" height="216.5"/>
+                                                            <rect key="frame" x="0.0" y="21" width="584" height="216"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <date key="date" timeIntervalSinceReferenceDate="547481900.90796304">
-                                                                <!--2018-05-08 14:18:20 +0000-->
-                                                            </date>
                                                             <connections>
                                                                 <action selector="finishDateChanged:" destination="-1" eventType="valueChanged" id="9wq-RL-Fwo"/>
                                                             </connections>
@@ -182,7 +174,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+            <color key="backgroundColor" systemColor="lightTextColor"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="i5M-Pr-FkT" firstAttribute="top" secondItem="2TS-jy-5aM" secondAttribute="top" constant="20" id="OZA-AF-IAI"/>
@@ -200,4 +192,9 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

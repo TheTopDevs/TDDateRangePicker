@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, PickerSides) {
     PickerSidesAll
 };
 
-extern inline UIColor *colorWithRGBA(int red, int green, int blue, int alpha);
+extern inline UIColor * _Nonnull colorWithRGBA(int red, int green, int blue, int alpha);
 
 /**
 Object themes for customizing the type of date range picker.
@@ -26,19 +26,19 @@ Object themes for customizing the type of date range picker.
 /**
  KVO Master property. Observe this property for observing for all values of picker theme model.
  */
-@property (nonatomic, strong, readonly) id themeMaster;
+@property (nonatomic, strong, readonly) id _Nullable themeMaster;
 /// Buttons color
-@property (nonatomic, strong) UIColor *tintColor;
+@property (nonatomic, strong) UIColor * _Nonnull tintColor;
 /// Picker's text color
-@property (nonatomic, strong) UIColor *datePickerTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull datePickerTextColor;
 /// Background color
-@property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 /// Substrate color shading.
-@property (nonatomic, strong) UIColor *backgroundDimmingColor;
+@property (nonatomic, strong) UIColor * _Nonnull backgroundDimmingColor;
 /// Color of title label
-@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor * _Nonnull titleColor;
 /// Color of subtitles label
-@property (nonatomic, strong) UIColor *subtitlesColor;
+@property (nonatomic, strong) UIColor * _Nonnull subtitlesColor;
 /// Blur styles available for UIVisualEffectView bacground of picker view
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 /// Modal presentation styles available when presenting view controllers.
@@ -71,17 +71,17 @@ Object themes for customizing the type of date range picker.
 
 @interface TDPickerTheme (Defaults)
 
-+ (UIColor *)defaultTintColor;
++ (UIColor *_Nonnull)defaultTintColor;
 
-+ (UIColor *)defaultBackgroundColor;
++ (UIColor *_Nonnull)defaultBackgroundColor;
 
-+ (UIColor *)defaultDatePickerTextColor;
++ (UIColor *_Nonnull)defaultDatePickerTextColor;
 
-+ (UIColor *)defaultBackgroundDimmingColor;
++ (UIColor *_Nonnull)defaultBackgroundDimmingColor;
 
-+ (UIColor *)defaultTitleColor;
++ (UIColor *_Nonnull)defaultTitleColor;
 
-+ (UIColor *)defaultSubtitlesColor;
++ (UIColor *_Nonnull)defaultSubtitlesColor;
 
 + (UIBlurEffectStyle)defaultBlurEffectStyle;
 

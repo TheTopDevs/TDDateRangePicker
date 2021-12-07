@@ -59,12 +59,12 @@
 		8BA5878A20FCDAFA0060DE58 /* TDDateRangePicker */ = {
 			isa = PBXGroup;
 			children = (
-				8BA5878B20FCDAFA0060DE58 /* TDDateRangePicker.h */,
+				8BA5878F20FCDAFA0060DE58 /* TDDateRange.h */,
 				8BA5878C20FCDAFA0060DE58 /* TDDateRange.m */,
 				8BA5878D20FCDAFA0060DE58 /* TDPickerTheme.h */,
-				8BA5878E20FCDAFA0060DE58 /* TDDateRangePicker.m */,
-				8BA5878F20FCDAFA0060DE58 /* TDDateRange.h */,
 				8BA5879020FCDAFA0060DE58 /* TDPickerTheme.m */,
+				8BA5878B20FCDAFA0060DE58 /* TDDateRangePicker.h */,
+				8BA5878E20FCDAFA0060DE58 /* TDDateRangePicker.m */,
 				8BA5879120FCDAFA0060DE58 /* TDDateRangePicker.xib */,
 			);
 			name = TDDateRangePicker;

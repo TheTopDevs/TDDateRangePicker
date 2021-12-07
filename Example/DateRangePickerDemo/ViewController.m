@@ -72,14 +72,12 @@
     
     self.picker.type = PickerTypeOneDate;
     [self.picker showPickerAnimated:YES completion:^{}];
-    
 }
 
 #pragma mark - TDDateRangePickerDelegate
 
 - (void)dateRangePicker:(TDDateRangePicker *)dateRangePicker didSelectDateRange:(TDDateRange *)dateRange {
     self.selectedRangeLabel.text = [NSString stringWithFormat:@"Selected range from date %@ - to date %@", [self.dateFormatter stringFromDate:dateRange.fromDate], [self.dateFormatter stringFromDate:dateRange.toDate]];
-    NSLog(@"%ld", [dateRange numberOfMinutesInRange]);
 }
 
 - (void)dateRangePicker:(TDDateRangePicker *)dateRangePicker didSelectDate:(NSDate *)date {
