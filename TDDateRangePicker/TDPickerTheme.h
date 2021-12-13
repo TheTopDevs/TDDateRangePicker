@@ -43,6 +43,7 @@ Object themes for customizing the type of date range picker.
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 /// Modal presentation styles available when presenting view controllers.
 @property (nonatomic, assign) UIModalPresentationStyle modalPresentationStyle;
+@property (nonatomic, assign) BOOL highlightsToday;
 /// The radius to use when drawing rounded corners for the picker view background
 @property (nonatomic, assign) CGFloat cornersRadius;
 /// The corners of a picker view.

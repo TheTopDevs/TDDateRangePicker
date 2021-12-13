@@ -230,33 +230,32 @@ typedef NS_ENUM(NSUInteger, PickerAxis) {
 
 - (void)updateUIToNewTheme:(TDPickerTheme *)theme {
     
+    self.modalPresentationStyle = theme.modalPresentationStyle;
     self.view.backgroundColor = [theme.backgroundDimmingColor colorWithAlphaComponent:0.01];
     self.visualEffectView.backgroundColor = theme.backgroundColor;
+    self.visualEffectView.effect = [UIBlurEffect effectWithStyle:theme.blurEffectStyle];
+    [self setMaskTo:self.visualEffectView byRoundingSides:theme.sides];
+    self.titleLabel.textColor = theme.titleColor;
     self.cancelButton.tintColor = theme.tintColor;
     self.doneButton.tintColor = theme.tintColor;
-    self.titleLabel.textColor = theme.titleColor;
     self.fromDateLabel.textColor = theme.subtitlesColor;
     self.toDateLabel.textColor = theme.subtitlesColor;
-    self.modalPresentationStyle = theme.modalPresentationStyle;
-    [self.visualEffectView setEffect:[UIBlurEffect effectWithStyle:theme.blurEffectStyle]];
-    self.modalPresentationStyle = theme.modalPresentationStyle;
-    [self setMaskTo:self.visualEffectView byRoundingSides:theme.sides];
-    [self.endDatePicker setValue:theme.datePickerTextColor forKey:@"textColor"];
+    
+    self.fromDateView.layer.cornerRadius = self.theme.cornersRadius;
+    self.toDateView.layer.cornerRadius = self.theme.cornersRadius;
+    self.fromDateView.layer.borderColor = [self.theme.datePickerTextColor colorWithAlphaComponent:0.4f].CGColor;
+    self.toDateView.layer.borderColor = [self.theme.datePickerTextColor colorWithAlphaComponent:0.4f].CGColor;
+    self.fromDateView.layer.borderWidth = 0.5f;
+    self.toDateView.layer.borderWidth = 0.5f;
+    
     [self.startDatePicker setValue:theme.datePickerTextColor forKey:@"textColor"];
-    if (@available(iOS 13.4, *)) {
-        self.endDatePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
-    }
+    [self.endDatePicker setValue:theme.datePickerTextColor forKey:@"textColor"];
     if (@available(iOS 13.4, *)) {
         self.startDatePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        self.endDatePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
     }
-    
-    self.toDateView.layer.cornerRadius = self.theme.cornersRadius;
-    self.fromDateView.layer.cornerRadius = self.theme.cornersRadius;
-    
-    self.toDateView.layer.borderColor = [self.theme.datePickerTextColor colorWithAlphaComponent:0.4f].CGColor;
-    self.fromDateView.layer.borderColor = [self.theme.datePickerTextColor colorWithAlphaComponent:0.4f].CGColor;
-    self.toDateView.layer.borderWidth = 0.5f;
-    self.fromDateView.layer.borderWidth = 0.5f;
+    [self.startDatePicker setValue:@(theme.highlightsToday) forKey:@"highlightsToday"];
+    [self.endDatePicker setValue:@(theme.highlightsToday) forKey:@"highlightsToday"];
     
     [self setupUI];
 }

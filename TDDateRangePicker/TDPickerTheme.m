@@ -42,6 +42,7 @@ inline UIColor *colorWithRGBA(int red, int green, int blue, int alpha) {
         self.subtitlesColor = subtitlesColor;
         self.blurEffectStyle = blurEffectStyle;
         self.modalPresentationStyle = [TDPickerTheme defaultModalPresentationStyle];
+        self.highlightsToday = YES;
         self.cornersRadius = cornersRadius;
         self.sides = PickerSidesTop;
         self.animationDuration = [TDPickerTheme defaultAnimationDuration];
