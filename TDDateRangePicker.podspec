@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'TDDateRangePicker'
-    s.version          = '1.1.1'
+    s.version          = '1.1.2'
     s.summary          = 'TDDateRangePicker is a picker with which you can get both a date range and one date and it is all with beautiful designs.'
 
     s.description      = <<-DESC
